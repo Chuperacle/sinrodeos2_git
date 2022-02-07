@@ -23,4 +23,6 @@ Route::get('/user', function(){
 Route::get('/admin', function(){
     return view('usuario');
 });
-
+Route::get('/user', function(){
+    return "hola user";
+});
