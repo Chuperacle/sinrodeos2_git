@@ -20,4 +20,6 @@ Route::get('/', function () {
 Route::get('/admin', function(){
     return "hola admin";
 });
-
+Route::get('/user', function(){
+    return "hola user";
+});
