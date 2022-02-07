@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AdminController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -25,6 +26,6 @@ Route::get('/user', function(){
     return "hola user";
 });
 Route::group(['prefix'=>'admin','as'=>'admin'],function(){
-    Route::get('/',function(){return view('admin');});
+    Route::resource('/',AdminController::class);
     Route::get('/usuario',function(){return view('usuario');});
 });
