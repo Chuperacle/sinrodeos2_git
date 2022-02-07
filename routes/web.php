@@ -1,6 +1,8 @@
 <?php
 
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\UsersController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -22,10 +24,10 @@ Route::get('/user', function(){
     return view('admin');
 });
 
-Route::get('/user', function(){
-    return "hola user";
-});
+
+Route::resource('/ver/{id}',ProfileController::class);
+
 Route::group(['prefix'=>'admin','as'=>'admin'],function(){
     Route::resource('/',AdminController::class);
-    Route::get('/usuario',function(){return view('usuario');});
+    Route::resource('/usuario',UsersController::class);
 });

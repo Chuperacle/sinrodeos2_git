@@ -4,18 +4,16 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class AdminController extends Controller
+class ProfileController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index($id)
     {
-        $var = rand(1,100);
-        return view('admin')->with('numero',$var);
-        
+        return "Profile ".$id;
     }
 
     /**
