@@ -17,7 +17,10 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/user', function(){
+    return view('admin');
+});
 Route::get('/admin', function(){
-    return "hola admin";
+    return view('usuario');
 });
 
