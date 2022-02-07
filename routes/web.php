@@ -13,16 +13,18 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcomne');
+// });
 
 Route::get('/user', function(){
     return view('admin');
 });
-Route::get('/admin', function(){
-    return view('usuario');
-});
+
 Route::get('/user', function(){
     return "hola user";
+});
+Route::group(['prefix'=>'admin','as'=>'admin'],function(){
+    Route::get('/',function(){return view('admin');});
+    Route::get('/usuario',function(){return view('usuario');});
 });
