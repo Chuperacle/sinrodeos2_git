@@ -16,16 +16,16 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-// Route::get('/', function () {
-//     return view('welcomne');
-// });
+Route::get('/', function () {
+    return view('welcome');
+});
 
 Route::get('/user', function(){
     return view('admin');
 });
 
 
-Route::resource('ver/{iden}',ProfileController::class);
+Route::get('/ver/{iden}',"ProfileController@index");
 
 Route::group(['prefix'=>'admin','as'=>'admin'],function(){
     Route::resource('/',AdminController::class);
