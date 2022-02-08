@@ -25,7 +25,7 @@ Route::get('/user', function(){
 });
 
 
-Route::resource('/ver/{id}',ProfileController::class);
+Route::resource('ver/{iden}',ProfileController::class);
 
 Route::group(['prefix'=>'admin','as'=>'admin'],function(){
     Route::resource('/',AdminController::class);
