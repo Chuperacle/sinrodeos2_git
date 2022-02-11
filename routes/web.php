@@ -3,6 +3,7 @@
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\UsersController;
+use App\Http\Controllers\VillarController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -25,9 +26,13 @@ Route::get('/user', function(){
 });
 
 
-Route::get('/ver/{iden}',"ProfileController@index");
+Route::get('/ver/{iden}', [ProfileController::class,'index']);
 
 Route::group(['prefix'=>'admin','as'=>'admin'],function(){
     Route::resource('/',AdminController::class);
     Route::resource('/usuario',UsersController::class);
 });
+
+// Route::group(['prefix'=>'lara','as'=>'lara'],function(){
+// });
+Route::get('/villar',[VillarController::class,'index']);
