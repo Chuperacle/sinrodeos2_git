@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\EliminarController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\UsersController;
 use Illuminate\Support\Facades\Route;
@@ -23,9 +24,9 @@ use Illuminate\Support\Facades\Route;
 Route::get('/user', function(){
     return view('admin');
 });
+Route::get('/prueba/{dato}',[EliminarController::class,'index']);
 
-
-Route::resource('/ver/{id}',ProfileController::class);
+Route::get('/ver/{id}',[ProfileController::class,'index']);
 
 Route::group(['prefix'=>'admin','as'=>'admin'],function(){
     Route::resource('/',AdminController::class);

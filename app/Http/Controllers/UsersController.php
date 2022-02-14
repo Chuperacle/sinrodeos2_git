@@ -9,7 +9,7 @@ class UsersController extends Controller
     public function index()
     {
         $var = rand(1,100);
-        return view('admin')->with('numero',$var);
+        return view('usuario')->with('numero',$var);
         
     }
 }

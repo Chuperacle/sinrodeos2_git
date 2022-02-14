@@ -10,11 +10,11 @@
     <meta name="author" content="">
 
     <title>SB Admin 2 - Dashboard</title>
-
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <!-- Custom fonts for this template-->
     <link href="{{ asset('dash/vendor/fontawesome-free/css/all.min.css') }}" rel="stylesheet" type="text/css">
     <link
-        href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
+    href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
         rel="stylesheet">
 
     <!-- Custom styles for this template-->
@@ -48,7 +48,7 @@
 
                 </div>
                 <!-- /.container-fluid -->
-
+                
             </div>
             <!-- End of Main Content -->
 
@@ -64,7 +64,7 @@
 
         </div>
         <!-- End of Content Wrapper -->
-
+        
     </div>
     <!-- End of Page Wrapper -->
 
@@ -99,7 +99,7 @@
 
     <!-- Core plugin JavaScript-->
     <script src="{{ asset('dash/vendor/jquery-easing/jquery.easing.min.js') }}"></script>
-
+    
     <!-- Custom scripts for all pages-->
     <script src="{{ asset('dash/js/sb-admin-2.min.js') }}"></script>
 
@@ -109,6 +109,7 @@
     <!-- Page level custom scripts -->
     <script src="{{ asset('dash/js/demo/chart-area-demo.js') }}"></script>
     <script src="{{ asset('dash/js/demo/chart-pie-demo.js') }}"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
     @yield('script')
 </body>
 
