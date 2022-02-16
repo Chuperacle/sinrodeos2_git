@@ -11,10 +11,14 @@ class ProfileController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index(Request $request, $id)
-    {
-        return "Profile ".$id;
-    }
+// <<<<<<< HEAD
+//     public function index(Request $request, $id)
+// =======
+//     public function index($iden)
+// >>>>>>> 4038f5b35b565a44c11c39a336534bd5a5520616
+//     {
+//         return "Profile ".$iden;
+//     }
 
     /**
      * Show the form for creating a new resource.
@@ -43,7 +47,7 @@ class ProfileController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show()
     {
         //
     }
@@ -54,7 +58,7 @@ class ProfileController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit()
     {
         //
     }
@@ -77,7 +81,7 @@ class ProfileController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy()
     {
         //
     }
