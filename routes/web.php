@@ -43,13 +43,19 @@ Route::group(['prefix'=>'admin','as'=>'admin'],function(){
 
 // Route::group(['prefix'=>'lara','as'=>'lara'],function(){
 // });
-Route::get('/cursos',[VillarController::class,'index'])->name('index');
+// Route::get('/cursos',[VillarController::class,'index'])->name('cursos.index');
 
-Route::get('/cursos/create',[VillarController::class,'create'])->name('cursos.create');
+// Route::get('/cursos/create',[VillarController::class,'create'])->name('cursos.create');
 
-Route::post('cursos',[VillarController::class,'store'])->name('cursos.store');
-Route::get('/cursos/{curso}',[VillarController::class,'show'])->name('cursos.show');
+// Route::post('cursos',[VillarController::class,'store'])->name('cursos.store');
 
-Route::get('cursos/{curso}/edit',[VillarController::class,'edit'])->name('cursos.edit');
+// Route::get('/cursos/{curso}',[VillarController::class,'show'])->name('cursos.show');
 
-Route::put('cursos/{curso}',[VillarController::class,'update'])->name('cursos.update');
+// Route::get('cursos/{curso}/edit',[VillarController::class,'edit'])->name('cursos.edit');
+
+// Route::put('cursos/{curso}',[VillarController::class,'update'])->name('cursos.update');
+
+// Route::delete('cursos/{curso}',[VillarController::class,'destroy'])->name('cursos.destroy');
+
+Route::resource('cursos',VillarController::class);
+// Route::resource('asignaturas',VillarController::class)->parameters(['asignaturas'=>'curso'])->names('cursos');

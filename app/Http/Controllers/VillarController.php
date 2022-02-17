@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Models\Curso;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use App\Http\Requests\StoreCurso;
+
 class VillarController extends Controller
 {
     /**
@@ -34,17 +36,20 @@ class VillarController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(StoreCurso $request)
     {
-        $curso = new Curso();
-        $curso->name = $request->name;
-        $curso->descripcion = $request->descripcion;
-        $curso->categoria = $request->categoria;
+        
 
-        $curso->save();
-        return redirect()->route('cursos.show',$curso);
-        // return redirect()->route('cursos.show',$curso->id);
+        // $curso = new Curso();
+        // $curso->name = $request->name;
+        // $curso->descripcion = $request->descripcion;
+        // $curso->categoria = $request->categoria;
 
+        // $curso->save();
+        // return redirect()->route('cursos.show',$curso);
+        $curso = Curso::create($request->all());
+        
+        return redirect()->route('cursos.show',$curso->id);
     }
 
     /**
@@ -83,11 +88,18 @@ class VillarController extends Controller
      */
     public function update(Request $request,Curso $curso)
     {
-        $curso->name = $request->name;
-        $curso->descripcion = $request->descripcion;
-        $curso->categoria = $request->categoria;
+        $request->validate([ 
+            'name'           => 'required',
+            'descripcion'   => 'required',
+            'categoria'     => 'required'
+        ]);
 
-        $curso->save();
+        // $curso->name = $request->name;
+        // $curso->descripcion = $request->descripcion;
+        // $curso->categoria = $request->categoria;
+        // $curso->save();
+
+        $curso->update($request->all());
         return redirect()->route('cursos.show',$curso);
     }
 
@@ -97,8 +109,10 @@ class VillarController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Curso $curso)
     {
-        //
+        $curso->delete();
+
+        return redirect()->route('cursos.index');
     }
 }
