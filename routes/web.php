@@ -59,3 +59,5 @@ Route::group(['prefix'=>'admin','as'=>'admin'],function(){
 
 Route::resource('cursos',VillarController::class);
 // Route::resource('asignaturas',VillarController::class)->parameters(['asignaturas'=>'curso'])->names('cursos');
+
+//Espero que se suba este comment, deberia estar con pull
