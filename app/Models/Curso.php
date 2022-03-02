@@ -12,4 +12,5 @@ class Curso extends Model
     // protected   $table = 'users';
     // protected $fillable= ['name','descripcion','categoria'];
     protected $guarded = [];
+   
 }

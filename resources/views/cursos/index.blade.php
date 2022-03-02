@@ -6,8 +6,10 @@
     <ul>
         @forelse ($cursos as $curso)
             <li>
-                <a href="{{ route('cursos.show', $curso->id) }}">{{ $curso->name }}</a>
-            </li>
+                <a href="{{ route('cursos.show', $curso->slug) }}">{{ $curso->name }}</a>
+                <br>
+                {{ route('cursos.show', $curso) }};
+             </li>
 
         @empty
             <h1>No hay nada Carnal</h1>

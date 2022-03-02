@@ -8,16 +8,14 @@ use App\Http\Controllers\VillarController;
 use Illuminate\Support\Facades\Route;
 
 /*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
+index   GET
+store   POST
+create  GET
+edit    GET
+show    GET
+update  PUT
+destroy DELETE
 */
-
 Route::get('/', function () {
     return view('welcome');
 });
@@ -44,20 +42,14 @@ Route::group(['prefix'=>'admin','as'=>'admin'],function(){
 // Route::group(['prefix'=>'lara','as'=>'lara'],function(){
 // });
 // Route::get('/cursos',[VillarController::class,'index'])->name('cursos.index');
-
 // Route::get('/cursos/create',[VillarController::class,'create'])->name('cursos.create');
-
 // Route::post('cursos',[VillarController::class,'store'])->name('cursos.store');
-
 // Route::get('/cursos/{curso}',[VillarController::class,'show'])->name('cursos.show');
-
 // Route::get('cursos/{curso}/edit',[VillarController::class,'edit'])->name('cursos.edit');
-
 // Route::put('cursos/{curso}',[VillarController::class,'update'])->name('cursos.update');
-
 // Route::delete('cursos/{curso}',[VillarController::class,'destroy'])->name('cursos.destroy');
 
-Route::resource('cursos',VillarController::class);
+Route::resource('asignatura',VillarController::class)->parameters(['asignatura'=>'curso'])->names('cursos');
 // Route::resource('asignaturas',VillarController::class)->parameters(['asignaturas'=>'curso'])->names('cursos');
 
 //Espero que se suba este comment, deberia estar con pull

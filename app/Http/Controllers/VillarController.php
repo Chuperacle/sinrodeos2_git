@@ -58,14 +58,23 @@ class VillarController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(Curso  $curso)
+    // public function show(Curso  $curso)
+    // {
+    //     dd($curso);
+    //     // $curso = Curso::find($id);
+    //     // return view('cursos.show',['curso' => $id]);
+    //     // dd($curso);
+    //     return view('cursos.show',compact('curso'));
+
+    // }
+    public function show(request  $request,$id)
     {
-        // $curso = Curso::find($id);
+        $curso = Curso::where('slug',$id)->first();
         // return view('cursos.show',['curso' => $id]);
+        // dd($curso);
         return view('cursos.show',compact('curso'));
 
     }
-
     /**
      * Show the form for editing the specified resource.
      *
