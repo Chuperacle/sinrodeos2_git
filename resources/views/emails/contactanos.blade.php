@@ -8,5 +8,9 @@
 </head>
 <body>
     <h1>Contactanos por Laravel</h1>
+    <p><strong>nombre: </strong>{{$contacto['name']}}</p>
+    <p><strong>correo: </strong>{{$contacto['correo']}}</p>
+    <p><strong>mensaje: </strong>{{$contacto['mensaje']}}</p>
+
 </body>
 </html>

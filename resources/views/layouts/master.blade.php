@@ -14,6 +14,7 @@
     </style>
 </head>
 <body>
+    @include('layouts/partials/header')
     @yield('content')
 
 

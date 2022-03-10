@@ -1,13 +1,13 @@
 <?php
 
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\ContactanosController;
 use App\Http\Controllers\EliminarController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\UsersController;
 use App\Http\Controllers\VillarController;
 use Illuminate\Support\Facades\Route;
-use App\Mail\ContactanosMailable;
-use Illuminate\Support\Facades\Mail;
+
 /*
 index   GET
 store   POST
@@ -52,8 +52,5 @@ Route::group(['prefix'=>'admin','as'=>'admin'],function(){
 
 Route::resource('asignatura',VillarController::class)->parameters(['asignatura'=>'curso'])->names('cursos');
 // Route::resource('asignaturas',VillarController::class)->parameters(['asignaturas'=>'curso'])->names('cursos');
-Route::get('contactanos',function(){
-    $correo = new ContactanosMailable;
-    Mail::to('jhonatanchupex@gmail.com')->send($correo);
-    return 'mensaje enviado';
-});
+Route::resource('contactanos',ContactanosController::class)->names('contactanos');
+Route::view('nosotros','nosotros')->name('nosotros');
